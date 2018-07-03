@@ -1,0 +1,31 @@
+{
+  "name": "subsystem-db",
+  "description": "An opinionated db abstraction layer subsystem for Node.js applications.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/AlmirKadric-Published/subsystem-db-nodejs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlmirKadric-Published/subsystem-db-nodejs.git"
+  },
+  "author": {
+    "name": "Almir Kadric",
+    "email": "github@almirkadric.com",
+    "url": "https://github.com/AlmirKadric"
+  },
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "npm run test:lint && npm run test:unit",
+    "test:lint": "eslint .",
+    "test:unit": "mocha ./test",
+    "precommit": "npm run test"
+  },
+  "dependencies": {
+    "subsystem-logger": "0.1.0"
+  },
+  "devDependencies": {
+    "eslint": "4.13.0",
+    "husky": "0.14.3",
+    "mocha": "4.0.1"
+  }
+}
