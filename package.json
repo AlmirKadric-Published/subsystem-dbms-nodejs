@@ -21,7 +21,13 @@
     "precommit": "npm run test"
   },
   "dependencies": {
-    "subsystem-logger": "0.1.0"
+    "codependency": "2.1.0",
+    "semver": "5.5.0"
+  },
+  "optionalPeerDependencies": {
+    "mysql2": "^1.5.3",
+    "redis": "^2.8.0",
+    "subsystem-logger": "^0.1.0"
   },
   "devDependencies": {
     "eslint": "4.13.0",
