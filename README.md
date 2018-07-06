@@ -1,12 +1,12 @@
-subsystem-db
-================
+subsystem-dbms
+==============
 An opinionated database abstraction subsystem for Node.js applications.
 
 
 Installation
 ------------
 ```
-npm install --save subsystem-db
+npm install --save subsystem-dbms
 ```
 
 
