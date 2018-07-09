@@ -1,11 +1,11 @@
 {
-  "name": "subsystem-db",
+  "name": "subsystem-dbms",
   "description": "An opinionated db abstraction layer subsystem for Node.js applications.",
   "version": "0.1.0",
-  "homepage": "https://github.com/AlmirKadric-Published/subsystem-db-nodejs",
+  "homepage": "https://github.com/AlmirKadric-Published/subsystem-dbms-nodejs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AlmirKadric-Published/subsystem-db-nodejs.git"
+    "url": "https://github.com/AlmirKadric-Published/subsystem-dbms-nodejs.git"
   },
   "author": {
     "name": "Almir Kadric",
