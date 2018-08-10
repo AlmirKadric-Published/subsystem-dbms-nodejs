@@ -1,11 +1,11 @@
 {
-  "name": "subsystem-dbms",
+  "name": "@catalyststack/subsystem-dbms",
   "description": "An opinionated db abstraction layer subsystem for Node.js applications.",
-  "version": "0.1.0",
-  "homepage": "https://github.com/AlmirKadric-Published/subsystem-dbms-nodejs",
+  "version": "0.2.0",
+  "homepage": "https://github.com/Catalyst-Stack/subsystem-dbms-nodejs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AlmirKadric-Published/subsystem-dbms-nodejs.git"
+    "url": "https://github.com/Catalyst-Stack/subsystem-dbms-nodejs.git"
   },
   "author": {
     "name": "Almir Kadric",
@@ -21,13 +21,13 @@
     "precommit": "npm run test"
   },
   "dependencies": {
-    "codependency": "2.1.0",
+    "codependency": "AlmirKadric/codependency#master",
     "semver": "5.5.0"
   },
   "optionalPeerDependencies": {
     "mysql2": "^1.5.3",
     "redis": "^2.8.0",
-    "subsystem-logger": "^0.1.0"
+    "@catalyststack/subsystem-logger": "^0.2.0"
   },
   "devDependencies": {
     "eslint": "4.13.0",

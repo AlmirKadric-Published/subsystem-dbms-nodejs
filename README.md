@@ -6,7 +6,7 @@ An opinionated database abstraction subsystem for Node.js applications.
 Installation
 ------------
 ```
-npm install --save subsystem-dbms
+npm install --save '@catalyststack/subsystem-dbms'
 ```
 
 
