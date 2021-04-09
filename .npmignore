@@ -1,0 +1,23 @@
+# Project Automation
+.github/
+.husky/
+
+# IDE
+.idea/
+
+# Code Coverage
+.nyc_output/
+coverage/
+.nycrc.yml
+
+# Doc files
+docs/
+typedoc.js
+
+# Test files
+test/
+
+# Dot file configurations
+.editorconfig
+.eslintignore
+.eslintrc.yml

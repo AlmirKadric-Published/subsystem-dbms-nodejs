@@ -1,5 +1,17 @@
-.idea/
-node_modules/
+# Build files
+dist/
+docs/
 
+# Operating System
 .DS_Store
+
+# NPM
+node_modules/
 npm-debug.log
+
+# Code Coverage
+.nyc_output/
+coverage/
+
+# IDE
+.idea/

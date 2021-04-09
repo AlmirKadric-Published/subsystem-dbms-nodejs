@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig-base.json",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "../",
+		"baseUrl": "../",
+		"paths": {
+			"@catalyststack/*": ["../*-nodejs"],
+		}
+  },
+	"include": [
+    "../src/**/*",
+    "../sample/Connectors/**/*",
+  ],
+}

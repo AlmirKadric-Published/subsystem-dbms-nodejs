@@ -1,0 +1,40 @@
+name: release_npm
+
+on:
+    # Trigger workflow on release publish
+    release:
+        types: [ published ]
+
+    # Allows running this workflow manually from the Actions tab
+    workflow_dispatch:
+        inputs:
+            target-ref:
+                description: Version Tag
+                required: true
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        steps:
+            - id: setup
+              name: '※ Setup Node.js subsystem project'
+              uses: catalyst-stack/github-actions/nodejs-subsystem-setup@master
+              with:
+                target-ref: ${{ github.event.inputs.target-ref }}
+
+            # NOTE: we need to fix/replace this so it fails if no artifact
+            - name: '※ Download release bundle artifact'
+              uses: robinraju/release-downloader@v1
+              with:
+                repository: ${{ github.repository }}
+                tag: ${{ steps.setup.outputs.ref-name }}
+                fileName: bundle.zip
+                out-file-path: ./dist
+
+            - name: '※ Extract release bundle artifact'
+              run: cd ./dist && unzip -d . ./bundle.zip && rm -rf ./bundle.zip
+
+            - name: '※ Publish to NPM'
+              uses: JS-DevTools/npm-publish@v1
+              with:
+                token: ${{ secrets.NPM_TOKEN }}

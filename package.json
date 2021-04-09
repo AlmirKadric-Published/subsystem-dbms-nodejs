@@ -1,8 +1,8 @@
 {
   "name": "@catalyststack/subsystem-dbms",
   "description": "An opinionated db abstraction layer subsystem for Node.js applications.",
-  "version": "0.2.0",
-  "homepage": "https://github.com/Catalyst-Stack/subsystem-dbms-nodejs",
+  "version": "0.3.0",
+  "homepage": "https://catalyst-stack.github.io/subsystem-dbms-nodejs/latest",
   "repository": {
     "type": "git",
     "url": "https://github.com/Catalyst-Stack/subsystem-dbms-nodejs.git"
@@ -13,26 +13,46 @@
     "url": "https://github.com/AlmirKadric"
   },
   "license": "MIT",
-  "main": "./lib/index.js",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
   "scripts": {
-    "test": "npm run test:lint && npm run test:unit",
+    "deps": "npm install .",
+    "bundle": "tsc --build ./src",
+    "docs": "typedoc --options ./typedoc.js --out ./docs/v${npm_package_version}",
+    "test": "run-p test:lint test:types test:unit test:coverage",
     "test:lint": "eslint .",
-    "test:unit": "mocha ./test",
-    "precommit": "npm run test"
+    "test:types": "tsc --noEmit --project ./src",
+    "test:unit": "ts-mocha --recursive --parallel --extension=ts --project ./test/tsconfig.json test/**/*",
+    "test:coverage": "nyc --check-coverage npm run test:unit",
+    "test:coverage:report": "nyc report --reporter=html",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "codependency": "AlmirKadric/codependency#master",
-    "semver": "5.5.0"
+    "@types/app-root-path": "^1.2.4",
+    "@types/semver": "^7.3.4",
+    "app-root-path": "^3.0.0",
+    "filenamify": "^4.2.0",
+    "semver": "^7.3.5",
+    "tiny-glob": "^0.2.8"
   },
-  "optionalPeerDependencies": {
-    "@catalyststack/subsystem-logger": "^0.2.0",
-    "@catalyststack/subsystem-dbms-file": "^0.1.0",
-    "@catalyststack/subsystem-dbms-couchbase": "^0.1.0",
-    "@catalyststack/subsystem-dbms-mysql": "^0.1.0"
+  "peerDependencies": {
+    "@catalyststack/subsystem-logger": "^0.2.0"
   },
   "devDependencies": {
-    "eslint": "4.13.0",
-    "husky": "0.14.3",
-    "mocha": "4.0.1"
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^14.14.35",
+    "@types/sinon": "^9.0.11",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "eslint": "^7.22.0",
+    "eslint-plugin-spellcheck": "0.0.17",
+    "husky": "^5.1.3",
+    "mocha": "^8.3.2",
+    "npm-run-all": "^4.1.5",
+    "nyc": "^15.1.0",
+    "sinon": "^10.0.0",
+    "ts-mocha": "^8.0.0",
+    "typedoc": "^0.20.34",
+    "typescript": "^4.2.3"
   }
 }

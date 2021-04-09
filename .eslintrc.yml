@@ -1,0 +1,61 @@
+env:
+    node: true
+    es2020: true
+
+parser: '@typescript-eslint/parser'
+
+parserOptions:
+    sourceType: module
+    ecmaVersion: 11
+
+plugins:
+    - '@typescript-eslint'
+    - 'spellcheck'
+
+extends:
+    - 'eslint:recommended'
+    - 'plugin:@typescript-eslint/recommended'
+
+rules:
+    indent: [error, tab, { SwitchCase: 1 }]
+    linebreak-style: [error, unix]
+    quotes: [error, single]
+    semi: [error, always]
+
+    spellcheck/spell-checker:
+        - warn
+        - comments: true
+          strings: true
+          templates: true
+          identifiers: false
+          ignoreRequire: true
+          skipWords:
+            - memberof
+            - readonly
+            - argv
+            - konfig
+            - sys
+            - tsconfig
+            - utf8
+            - yml
+            - yaml
+            - catalyststack
+            - fs
+            - readdir
+            - semver
+            - sinon
+            - webpack
+            - accessor
+            - accessors
+            - autoload
+            - dbms
+            - hardcode
+            - hardcoded
+            - simplefile
+            - traversable
+            - wx
+
+overrides:
+    -   files: ["*.js"]
+        rules:
+            '@typescript-eslint/no-var-requires': off
